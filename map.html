@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carte du voyage - Azores</title>
+  <style>
+    body { margin: 0; padding: 0; font-family: Arial, sans-serif; }
+    #map { height: 100vh; width: 100%; }
+    .info-window { max-width: 250px; font-family: Arial, sans-serif; }
+    .info-window img { width: 100%; height: auto; border-radius: 8px; margin-bottom: 10px; }
+    .info-window h3 { margin: 0 0 5px 0; font-size: 16px; color: #333; }
+    .info-window p { margin: 5px 0; font-size: 14px; color: #666; }
+    .info-window a { color: #1a73e8; text-decoration: none; }
+    .info-window a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  
+  <script>
+    function initMap() {
+      const center = { lat: 38.2284159375, lng: -26.950333593749995 };
+      const map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 10,
+        center: center
+      });
+      
+      const markers = [{"lat":37.7394207,"lng":-25.6686725,"name":"Ponta Delgada, São Miguel","jour":1,"titre":"Arrivée à Ponta Delgada, São Miguel","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=37.7394207,-25.6686725&key=AIzaSyB5WUNvRC9eOjHRLt92fs4hsp0Auje3aAI","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=37.7394207,-25.6686725","aiImageUrl":"jour1.jpg"},{"lat":37.8589492,"lng":-25.7944989,"name":"Sete Cidades, São Miguel","jour":2,"titre":"Les merveilles de Sete Cidades","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=37.8589492,-25.7944989&key=AIzaSyB5WUNvRC9eOjHRLt92fs4hsp0Auje3aAI","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=37.8589492,-25.7944989","aiImageUrl":"jour2.jpg"},{"lat":37.7760676,"lng":-25.3104277,"name":"Furnas, São Miguel","jour":3,"titre":"Les trésors géothermiques de Furnas","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=37.7760676,-25.3104277&key=AIzaSyB5WUNvRC9eOjHRLt92fs4hsp0Auje3aAI","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=37.7760676,-25.3104277","aiImageUrl":"jour3.jpg"},{"lat":37.7842955,"lng":-25.5009788,"name":"Lagoa do Fogo, Caldeira Velha, São Miguel","jour":4,"titre":"Lagoa do Fogo et Caldeira Velha","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=37.7842955,-25.5009788&key=AIzaSyB5WUNvRC9eOjHRLt92fs4hsp0Auje3aAI","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=37.7842955,-25.5009788","aiImageUrl":"jour4.jpg"},{"lat":37.8226777,"lng":-25.5238789,"name":"Nordeste, Ribeira Grande, São Miguel","jour":5,"titre":"Côte Nord-Est et Ribeira Grande","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=37.8226777,-25.5238789&key=AIzaSyB5WUNvRC9eOjHRLt92fs4hsp0Auje3aAI","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=37.8226777,-25.5238789","aiImageUrl":"jour5.jpg"},{"lat":37.780411,"lng":-25.4970466,"name":"São Miguel","jour":7,"titre":"Plantations de thé et ananas","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=37.780411,-25.4970466&key=AIzaSyB5WUNvRC9eOjHRLt92fs4hsp0Auje3aAI","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=37.780411,-25.4970466","aiImageUrl":"jour7.jpg"},{"lat":38.6635375,"lng":-27.2293969,"name":"Angra do Heroísmo, Terceira","jour":8,"titre":"Vol vers Terceira et Angra do Heroísmo","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=38.6635375,-27.2293969&key=AIzaSyB5WUNvRC9eOjHRLt92fs4hsp0Auje3aAI","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=38.6635375,-27.2293969","aiImageUrl":"jour8.jpg"},{"lat":38.7374102,"lng":-27.2684469,"name":"Algar do Carvão, Gruta do Natal, Biscoitos, Terceira","jour":10,"titre":"Grottes volcaniques et piscines naturelles","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=38.7374102,-27.2684469&key=AIzaSyB5WUNvRC9eOjHRLt92fs4hsp0Auje3aAI","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=38.7374102,-27.2684469","aiImageUrl":"jour10.jpg"},{"lat":38.7339162,"lng":-27.0646976,"name":"Serra do Cume, Praia da Vitória, Terceira","jour":11,"titre":"Paysages ruraux et Praia da Vitória","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=38.7339162,-27.0646976&key=AIzaSyB5WUNvRC9eOjHRLt92fs4hsp0Auje3aAI","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=38.7339162,-27.0646976","aiImageUrl":"jour11.jpg"},{"lat":38.5328274,"lng":-28.5293417,"name":"Madalena, Pico","jour":12,"titre":"Vol vers Pico, l'île montagne","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=38.5328274,-28.5293417&key=AIzaSyB5WUNvRC9eOjHRLt92fs4hsp0Auje3aAI","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=38.5328274,-28.5293417","aiImageUrl":"jour12.jpg"},{"lat":38.4686758,"lng":-28.3992576,"name":"Mont Pico, Pico","jour":13,"titre":"Ascension du Mont Pico ou exploration de ses pentes","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=38.4686758,-28.3992576&key=AIzaSyB5WUNvRC9eOjHRLt92fs4hsp0Auje3aAI","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=38.4686758,-28.3992576","aiImageUrl":"jour13.jpg"},{"lat":38.4580494,"lng":-28.3228165,"name":"Pico","jour":14,"titre":"Vignobles et piscines naturelles","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=38.4580494,-28.3228165&key=AIzaSyB5WUNvRC9eOjHRLt92fs4hsp0Auje3aAI","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=38.4580494,-28.3228165","aiImageUrl":"jour14.jpg"},{"lat":38.39976770000001,"lng":-28.2519641,"name":"Lajes do Pico, Pico","jour":15,"titre":"Observation des cétacés à Pico","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=38.39976770000001,-28.2519641&key=AIzaSyB5WUNvRC9eOjHRLt92fs4hsp0Auje3aAI","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=38.39976770000001,-28.2519641","aiImageUrl":"jour15.jpg"},{"lat":38.5348447,"lng":-28.6299812,"name":"Horta, Faial","jour":16,"titre":"Ferry vers Faial et Horta","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=38.5348447,-28.6299812&key=AIzaSyB5WUNvRC9eOjHRLt92fs4hsp0Auje3aAI","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=38.5348447,-28.6299812","aiImageUrl":"jour16.jpg"},{"lat":38.5833934,"lng":-28.716885,"name":"Capelinhos, Caldeira, Faial","jour":17,"titre":"Paysages lunaires de Capelinhos et Caldeira","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=38.5833934,-28.716885&key=AIzaSyB5WUNvRC9eOjHRLt92fs4hsp0Auje3aAI","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=38.5833934,-28.716885","aiImageUrl":"jour17.jpg"},{"lat":37.780411,"lng":-25.4970466,"name":"Faial / São Miguel","jour":19,"titre":"Départ des Açores","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=37.780411,-25.4970466&key=AIzaSyB5WUNvRC9eOjHRLt92fs4hsp0Auje3aAI","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=37.780411,-25.4970466","aiImageUrl":"jour19.jpg"}];
+      
+      markers.forEach((markerData) => {
+        const marker = new google.maps.Marker({
+          position: { lat: markerData.lat, lng: markerData.lng },
+          map: map,
+          title: markerData.name,
+          label: String(markerData.jour)
+        });
+        
+        const contentString = `
+          <div class="info-window">
+            <img src="${markerData.streetViewUrl}" alt="Street View de ${markerData.name}" />
+            <h3>Jour ${markerData.jour}</h3>
+            <p><strong>${markerData.name}</strong></p>
+            <p><a href="${markerData.streetViewLinkUrl}" target="_blank" rel="noopener noreferrer"><strong>${markerData.titre}</strong></a></p>
+          </div>
+        `;
+        
+        const infoWindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+        
+        marker.addListener('click', () => {
+          infoWindow.open(map, marker);
+        });
+      });
+    }
+  </script>
+  
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5WUNvRC9eOjHRLt92fs4hsp0Auje3aAI&callback=initMap">
+  </script>
+</body>
+</html>
