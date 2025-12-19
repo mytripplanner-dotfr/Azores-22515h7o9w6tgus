@@ -1,0 +1,842 @@
+
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aventure Insulaire aux Açores : Trésors Volcaniques et Océaniques </title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+      tailwind.config = {
+          theme: {
+              extend: {
+                  colors: {
+                      template: {
+                          sable: '#FFEDD5', 
+                          ocre: '#F97316',   // Orange Vibrant (Brand Accent)
+                          roche: '#0F172A',  // Bleu Nuit (Brand Dark)
+                          ciel: '#0D9488',   // Vert Lagon (Brand Primary)
+                          bg: '#FFF7ED'      // C'est un blanc cassé chaud, parfait pour la lecture et le contraste.
+                      }
+                  },
+                  fontFamily: {
+                      sans: ['"Plus Jakarta Sans"', 'sans-serif'], // Nouvelle police corps
+                      serif: ['"Outfit"', 'sans-serif'],           // Nouvelle police titres
+                  }
+              }
+          }
+      }
+    </script>
+    <style>
+        body { overflow-x: hidden; }
+        
+        /* 2. FORÇAGE DES GRAISSES (Comme sur la Landing Page) */
+        .font-sans { font-weight: 600 !important; }
+        .font-serif { font-weight: 800 !important; }
+
+        /* Ligne verticale de la timeline */
+        .timeline-line {
+            position: absolute;
+            left: 24px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #E5E7EB;
+            z-index: 0;
+        }
+
+        @media (min-width: 768px) {
+            .timeline-line { left: 50%; margin-left: -1px; }
+        }
+
+        /* Style des cartes Info */
+        .tip-card {
+            border-left: 4px solid #F97316; /* ocre */
+            background-color: #FFF7ED;
+        }
+
+        /* Masquer la scrollbar de la nav mobile tout en gardant le scroll */
+        .hide-scroll::-webkit-scrollbar { display: none; }
+        .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-template-bg text-template-roche antialiased">
+    
+    <nav id="nav-desktop" class="hidden md:flex fixed top-0 w-full z-50 bg-white/90 backdrop-blur border-b border-gray-200 py-4 px-8 justify-between items-center shadow-sm transition-transform duration-300 -translate-y-full">
+        <a href="#top" class="text-xl font-serif font-bold tracking-widest text-template-roche">MyTrip<span class="text-template-ocre">Planner</span></a>
+        <div class="space-x-6 text-sm font-bold text-gray-600">
+            <a href="#jour-1" class="nav-item-desktop hover:text-template-ocre transition">Le Parcours</a>
+            <a href="#pratique" class="nav-item-desktop hover:text-template-ocre transition">Infos Pratiques</a>
+        </div>
+    </nav>
+
+    <nav id="nav-mobile" class="md:hidden fixed top-0 w-full z-50 bg-white/95 backdrop-blur border-b border-gray-200 py-3 pl-4 overflow-x-auto hide-scroll whitespace-nowrap shadow-md transition-transform duration-300 -translate-y-full">
+        <div class="flex space-x-2 pr-4" id="mobile-menu-container">
+            <a href="#top" class="inline-block px-3 py-1 bg-template-roche text-white rounded-full text-xs font-bold shadow-sm">Top</a>
+            
+                <a href="#jour-1" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J1 Arrivée à Ponta Delgada, São Miguel</a>
+            
+                <a href="#jour-2" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J2 Les merveilles de Sete Cidades</a>
+            
+                <a href="#jour-3" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J3 Les trésors géothermiques de Furnas</a>
+            
+                <a href="#jour-4" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J4 Lagoa do Fogo et Caldeira Velha</a>
+            
+                <a href="#jour-5" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J5 Côte Nord-Est et Ribeira Grande</a>
+            
+                <a href="#jour-6" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J6 Rencontre avec les géants de l'océan</a>
+            
+                <a href="#jour-7" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J7 Plantations de thé et ananas</a>
+            
+                <a href="#jour-8" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J8 Vol vers Terceira et Angra do Heroísmo</a>
+            
+                <a href="#jour-9" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J9 Exploration d'Angra et Monte Brasil</a>
+            
+                <a href="#jour-10" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J10 Grottes volcaniques et piscines naturelles</a>
+            
+                <a href="#jour-11" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J11 Paysages ruraux et Praia da Vitória</a>
+            
+                <a href="#jour-12" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J12 Vol vers Pico, l'île montagne</a>
+            
+                <a href="#jour-13" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J13 Ascension du Mont Pico ou exploration de ses pentes</a>
+            
+                <a href="#jour-14" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J14 Vignobles et piscines naturelles</a>
+            
+                <a href="#jour-15" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J15 Observation des cétacés à Pico</a>
+            
+                <a href="#jour-16" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J16 Ferry vers Faial et Horta</a>
+            
+                <a href="#jour-17" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J17 Paysages lunaires de Capelinhos et Caldeira</a>
+            
+                <a href="#jour-18" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J18 Horta et Monte da Guia</a>
+            
+                <a href="#jour-19" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J19 Départ des Açores</a>
+            
+            <a href="#pratique" class="mobile-link inline-block px-3 py-1 border border-gray-300 text-gray-500 rounded-full text-xs font-bold">Infos</a>
+        </div>
+    </nav>
+
+    <header id="top" class="relative h-[60vh] flex items-center justify-center bg-cover bg-center"
+            style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url('https://raw.githubusercontent.com/mytripplanner-dotfr/Azores-22515h7o9w6tgus/main/header.png" || 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021'}');">
+        
+        <div class="relative z-20 text-center text-white px-4 max-w-3xl animate-fade-in-up">
+            <p class="font-sans text-template-sable tracking-[0.2em] mb-4 uppercase text-xs font-bold">Feuille de Route</p>
+            <h1 class="font-serif text-5xl md:text-8xl mb-6 leading-tight drop-shadow-lg">AZORES</h1>
+            <p class="font-sans text-lg md:text-xl text-gray-100 mb-10 font-medium max-w-2xl mx-auto leading-relaxed">Aventure Insulaire aux Açores : Trésors Volcaniques et Océaniques</p>
+            
+            <div class="flex flex-wrap justify-center gap-4 text-sm font-bold mb-10">
+                <span class="bg-white/20 backdrop-blur-md px-5 py-2 rounded-full border border-white/30 shadow-sm">🗓️ 19 jours</span>
+                <span class="bg-white/20 backdrop-blur-md px-5 py-2 rounded-full border border-white/30 shadow-sm">💰 6550€</span>
+                <span class="bg-white/20 backdrop-blur-md px-5 py-2 rounded-full border border-white/30 shadow-sm">🛬 environ 18h avec escales depuis David, Panama</span>
+            </div>
+        </div>
+    </header>
+
+    <section id="itineraire" class="max-w-6xl mx-auto px-4 py-16 relative">
+        <div class="text-center mb-16">
+            <h2 class="text-template-ocre font-bold tracking-normal text-4xl mt-2 uppercase font-serif">Votre Roadtrip</h2>
+        </div>
+
+        <div class="relative">
+            <div class="timeline-line"></div>
+            
+                <div id="jour-1" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-roche rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2 font-bold">Jour 1</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Arrivée à Ponta Delgada, São Miguel</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Après un long voyage, atterrissez sur l'île principale de São Miguel. Prenez le temps de vous installer et de vous imprégner de l'atmosphère açorienne. Une balade tranquille dans la capitale vous permettra de découvrir ses charmes sans précipitation, une introduction douce à votre aventure insulaire.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left font-medium">
+                            <li>🛬 <strong>Arrivée et installation</strong>: Atterrissez à l'aéroport de Ponta Delgada (PDL), récupérez votre voiture de location et rejoignez votre hôtel pour vous rafraîchir et déposer vos bagages.</li><li>🚶‍♂️ <strong>Balade dans le centre historique</strong>: Flânez dans les rues pavées de Ponta Delgada, admirez les portes de la ville et l'église de São Sebastião, et imprégnez-vous de l'ambiance locale en douceur.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/mytripplanner-dotfr/Azores-22515h7o9w6tgus/main/jour1.jpg" class="w-full h-64 object-cover" alt="Jour 1">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">ℹ️ Location de voiture</p>
+                                <p class="text-gray-700">La location d'une voiture est essentielle pour explorer les Açores en toute liberté. Réservez-la bien à l'avance, surtout en haute saison.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🍽️ Premier repas</p>
+                                <p class="text-gray-700">Goûtez aux "lapas grelhadas" (patelles grillées) en entrée, une spécialité locale incontournable pour débuter votre aventure culinaire.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-2" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ocre rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2 font-bold">Jour 2</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Les merveilles de Sete Cidades</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Aujourd'hui, plongez au cœur de l'icône des Açores : la caldeira de Sete Cidades. Ses lacs jumeaux, l'un bleu et l'autre vert, offrent des panoramas à couper le souffle. Profitez des points de vue spectaculaires avant de descendre explorer le village niché au fond du cratère, une immersion totale dans la nature volcanique.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left font-medium">
+                            <li>👀 <strong>Points de vue emblématiques</strong>: Admirez la vue imprenable sur les lacs jumeaux depuis le Miradouro da Vista do Rei, puis explorez le Miradouro da Boca do Inferno pour une perspective encore plus spectaculaire et moins connue.</li><li>🚶‍♀️ <strong>Exploration du village de Sete Cidades</strong>: Descendez dans la caldeira pour visiter le charmant village, vous promener au bord des lacs et ressentir la quiétude de ce lieu unique.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/mytripplanner-dotfr/Azores-22515h7o9w6tgus/main/jour2.jpg" class="w-full h-64 object-cover" alt="Jour 2">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">☁️ Météo changeante</p>
+                                <p class="text-gray-700">Le temps aux Açores peut changer rapidement. Ne vous découragez pas si le brouillard est présent, il peut se dissiper en quelques minutes.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">📸 Conseil photo</p>
+                                <p class="text-gray-700">Le Miradouro da Boca do Inferno offre des clichés incroyables, mais l'accès peut être un peu plus difficile. La vue en vaut la peine.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-3" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ciel rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2 font-bold">Jour 3</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Les trésors géothermiques de Furnas</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Direction l'est de l'île pour découvrir Furnas, une vallée volcanique active. Entre fumerolles, sources chaudes et jardins luxuriants, cette journée sera placée sous le signe de la détente et de la découverte des phénomènes géothermiques. Ne manquez pas de goûter au fameux "cozido das Furnas", une expérience culinaire unique.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left font-medium">
+                            <li>♨️ <strong>Sources chaudes et fumerolles</strong>: Visitez les caldeiras de Furnas pour observer les fumerolles et les sources d'eau bouillante, témoins de l'activité volcanique souterraine. C'est ici que le "cozido" est cuit sous terre.</li><li>🌳 <strong>Jardin Terra Nostra</strong>: Détendez-vous dans le magnifique parc botanique de Terra Nostra et baignez-vous dans sa piscine thermale riche en fer, aux propriétés relaxantes et curatives.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/mytripplanner-dotfr/Azores-22515h7o9w6tgus/main/jour3.jpg" class="w-full h-64 object-cover" alt="Jour 3">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🍽️ Le Cozido</p>
+                                <p class="text-gray-700">Réservez votre "cozido das Furnas" à l'avance dans un restaurant local pour être sûr d'en déguster un, car sa préparation prend plusieurs heures.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">⚠️ Attention aux maillots</p>
+                                <p class="text-gray-700">L'eau riche en fer des piscines thermales peut tacher les maillots de bain clairs. Prévoyez un maillot foncé ou un vieux maillot.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-4" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-roche rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2 font-bold">Jour 4</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Lagoa do Fogo et Caldeira Velha</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Aujourd'hui, explorez le cœur sauvage de São Miguel avec la Lagoa do Fogo, un lac d'une beauté brute niché dans un cratère. L'après-midi sera dédiée à la relaxation dans les eaux chaudes de Caldeira Velha, une oasis de verdure et de cascades thermales, combinant nature sauvage et bien-être.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left font-medium">
+                            <li>🏞️ <strong>Miradouros de Lagoa do Fogo</strong>: Admirez la vue panoramique sur la Lagoa do Fogo depuis les différents points d'observation, un lac d'une pureté exceptionnelle au milieu d'une nature préservée.</li><li>💦 <strong>Baignade à Caldeira Velha</strong>: Plongez dans les piscines naturelles d'eau chaude de Caldeira Velha, entourées d'une végétation luxuriante et d'une cascade d'eau ferrugineuse.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/mytripplanner-dotfr/Azores-22515h7o9w6tgus/main/jour4.jpg" class="w-full h-64 object-cover" alt="Jour 4">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🚶‍♂️ Randonnée</p>
+                                <p class="text-gray-700">Des sentiers de randonnée mènent jusqu'aux rives de la Lagoa do Fogo pour les plus aventureux. Prévoyez de bonnes chaussures.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🎟️ Accès Caldeira Velha</p>
+                                <p class="text-gray-700">L'accès à Caldeira Velha est payant et limité. Il est conseillé d'arriver tôt ou de réserver en ligne si possible pour éviter l'attente.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-5" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ocre rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2 font-bold">Jour 5</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Côte Nord-Est et Ribeira Grande</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Partez à la découverte de la côte nord-est de São Miguel, réputée pour ses paysages verdoyants et ses falaises abruptes. Visitez des villages pittoresques et profitez de la beauté sauvage de cette partie de l'île. Terminez la journée à Ribeira Grande, ville de surf et d'architecture baroque, pour un contraste saisissant.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left font-medium">
+                            <li>🌸 <strong>Parcs et Miradouros du Nordeste</strong>: Explorez les magnifiques parcs fleuris et les points de vue aménagés le long de la route côtière du Nordeste, comme le Miradouro da Ponta do Sossego ou le Miradouro da Ponta da Madrugada.</li><li>🏄‍♂️ <strong>Ribeira Grande et ses plages</strong>: Visitez la charmante ville de Ribeira Grande, admirez son architecture baroque et profitez de l'ambiance décontractée de ses plages, prisées des surfeurs.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/mytripplanner-dotfr/Azores-22515h7o9w6tgus/main/jour5.jpg" class="w-full h-64 object-cover" alt="Jour 5">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🛣️ Routes panoramiques</p>
+                                <p class="text-gray-700">La route côtière du Nordeste est sinueuse mais offre des vues spectaculaires. Prenez votre temps pour apprécier chaque virage.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">⛪ Architecture</p>
+                                <p class="text-gray-700">À Ribeira Grande, ne manquez pas l'église de Nossa Senhora da Estrela, un bel exemple de l'architecture açorienne.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-6" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ciel rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2 font-bold">Jour 6</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Rencontre avec les géants de l'océan</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Aujourd'hui est une journée dédiée à l'océan Atlantique et à ses habitants majestueux. Embarquez pour une excursion d'observation des baleines et des dauphins, une expérience inoubliable au large des côtes de São Miguel. L'après-midi, profitez de la capitale pour une dernière immersion avant de changer d'île.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left font-medium">
+                            <li>🐳 <strong>Observation des cétacés</strong>: Participez à une excursion en bateau pour observer les baleines et les dauphins dans leur habitat naturel, une expérience magique et respectueuse de la faune marine.</li><li>🚶‍♀️ <strong>Détente à Ponta Delgada</strong>: Profitez de l'après-midi pour flâner dans les boutiques, visiter le marché de la Graça ou simplement vous détendre sur une terrasse de café à Ponta Delgada.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/mytripplanner-dotfr/Azores-22515h7o9w6tgus/main/jour6.jpg" class="w-full h-64 object-cover" alt="Jour 6">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🌊 Choix de l'opérateur</p>
+                                <p class="text-gray-700">Choisissez un opérateur respectueux de l'environnement et des animaux pour votre excursion d'observation des cétacés.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🤢 Mal de mer</p>
+                                <p class="text-gray-700">Si vous êtes sujet au mal de mer, prévoyez des médicaments avant l'excursion, car l'océan Atlantique peut être agité.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-7" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-roche rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2 font-bold">Jour 7</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Plantations de thé et ananas</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Avant de quitter São Miguel, découvrez deux productions agricoles uniques aux Açores : le thé et l'ananas. Visitez les plantations et dégustez ces produits locaux, témoins du savoir-faire insulaire. Profitez de cette dernière journée sur l'île pour quelques achats souvenirs ou une dernière balade.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left font-medium">
+                            <li>☕ <strong>Visite des plantations de thé</strong>: Explorez les plantations de thé de Gorreana ou Porto Formoso, les seules d'Europe, et dégustez une tasse de thé açorien tout en admirant les paysages verdoyants.</li><li>🍍 <strong>Serres d'ananas</strong>: Découvrez la culture de l'ananas des Açores dans des serres traditionnelles, un fruit cultivé avec patience et savoir-faire, et goûtez à sa saveur unique.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/mytripplanner-dotfr/Azores-22515h7o9w6tgus/main/jour7.jpg" class="w-full h-64 object-cover" alt="Jour 7">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🎁 Souvenirs gourmands</p>
+                                <p class="text-gray-700">Le thé et les produits à base d'ananas (liqueur, confiture) sont d'excellents souvenirs à rapporter de São Miguel.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🚶‍♀️ Balade digestive</p>
+                                <p class="text-gray-700">Après les dégustations, profitez d'une dernière balade le long de la côte ou dans un parc pour digérer et profiter des paysages.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-8" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ocre rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2 font-bold">Jour 8</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Vol vers Terceira et Angra do Heroísmo</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Aujourd'hui, quittez São Miguel pour l'île de Terceira, réputée pour sa capitale historique classée à l'UNESCO. Après un court vol inter-îles, installez-vous à Angra do Heroísmo et commencez à explorer ses rues colorées et son riche patrimoine, une immersion dans l'histoire açorienne.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left font-medium">
+                            <li>✈️ <strong>Vol inter-îles</strong>: Prenez un vol court de Ponta Delgada (PDL) à Lajes (TER) sur Terceira. Récupérez une nouvelle voiture de location à l'aéroport.</li><li>🚶‍♂️ <strong>Découverte d'Angra do Heroísmo</strong>: Flânez dans le centre historique d'Angra do Heroísmo, admirez ses maisons colorées, ses églises baroques et ses balcons typiques, témoins de son passé glorieux.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/mytripplanner-dotfr/Azores-22515h7o9w6tgus/main/jour8.jpg" class="w-full h-64 object-cover" alt="Jour 8">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">UNESCO Patrimoine Mondial</p>
+                                <p class="text-gray-700">Angra do Heroísmo est classée au patrimoine mondial de l'UNESCO. Prenez le temps d'apprécier son architecture unique.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🗺️ Orientation</p>
+                                <p class="text-gray-700">Procurez-vous une carte de la ville pour ne rien manquer des points d'intérêt principaux.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-9" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ciel rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2 font-bold">Jour 9</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Exploration d'Angra et Monte Brasil</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Consacrez cette journée à l'exploration approfondie d'Angra do Heroísmo. Visitez ses monuments historiques, ses musées et terminez par une ascension du Monte Brasil pour une vue panoramique sur la ville et la baie. Une immersion complète dans l'histoire et la beauté de Terceira, entre culture et nature.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left font-medium">
+                            <li>⛪ <strong>Visite des monuments d'Angra</strong>: Explorez la Cathédrale de Sé, le Palais des Capitaines Généraux et le Musée d'Angra pour un aperçu de l'histoire et de la culture de l'île.</li><li>⛰️ <strong>Ascension du Monte Brasil</strong>: Montez au sommet du Monte Brasil, un volcan éteint formant une péninsule, pour profiter de vues spectaculaires sur Angra do Heroísmo et l'océan Atlantique.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/mytripplanner-dotfr/Azores-22515h7o9w6tgus/main/jour9.jpg" class="w-full h-64 object-cover" alt="Jour 9">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🚶‍♀️ Chaussures confortables</p>
+                                <p class="text-gray-700">Prévoyez des chaussures confortables pour la marche dans les rues pavées et l'ascension du Monte Brasil.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🌅 Coucher de soleil</p>
+                                <p class="text-gray-700">Le Monte Brasil est un excellent spot pour admirer le coucher de soleil sur Angra do Heroísmo.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-10" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-roche rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2 font-bold">Jour 10</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Grottes volcaniques et piscines naturelles</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Aventurez-vous dans les entrailles de la terre en explorant les grottes volcaniques de Terceira, témoins de son passé géologique. L'après-midi, détendez-vous dans les piscines naturelles de Biscoitos, formées par la lave, offrant un cadre unique pour la baignade et la relaxation.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left font-medium">
+                            <li> subterranean <strong>Algar do Carvão et Gruta do Natal</strong>: Descendez dans l'Algar do Carvão, une cheminée volcanique impressionnante, puis explorez la Gruta do Natal, un tunnel de lave fascinant.</li><li>🏊‍♀️ <strong>Piscines naturelles de Biscoitos</strong>: Baignez-vous dans les piscines naturelles de Biscoitos, creusées dans la roche volcanique noire, offrant une expérience de baignade unique et rafraîchissante.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/mytripplanner-dotfr/Azores-22515h7o9w6tgus/main/jour10.jpg" class="w-full h-64 object-cover" alt="Jour 10">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🌡️ Température des grottes</p>
+                                <p class="text-gray-700">La température dans les grottes est fraîche et humide. Prévoyez un pull léger même en été.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🍷 Vins de Biscoitos</p>
+                                <p class="text-gray-700">Profitez de votre passage à Biscoitos pour visiter le Musée du Vin et déguster les vins locaux, produits sur des terres volcaniques.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-11" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ocre rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2 font-bold">Jour 11</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Paysages ruraux et Praia da Vitória</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Découvrez l'intérieur verdoyant de Terceira, ses pâturages et ses vues panoramiques depuis la Serra do Cume. L'après-midi, explorez Praia da Vitória, la deuxième ville de l'île, avec sa longue plage de sable et son port animé. Une journée entre nature et urbanité, pour un aperçu complet de l'île.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left font-medium">
+                            <li> panoramic <strong>Miradouro da Serra do Cume</strong>: Admirez la vue emblématique sur la "patchwork" de champs verts depuis la Serra do Cume, un panorama unique sur l'intérieur de l'île.</li><li>🏖️ <strong>Praia da Vitória</strong>: Visitez Praia da Vitória, sa marina, sa longue plage de sable et son centre-ville animé. Profitez-en pour vous détendre ou prendre un café en bord de mer.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/mytripplanner-dotfr/Azores-22515h7o9w6tgus/main/jour11.jpg" class="w-full h-64 object-cover" alt="Jour 11">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">📸 Photo iconique</p>
+                                <p class="text-gray-700">Le Miradouro da Serra do Cume est l'un des spots photo les plus célèbres de Terceira, offrant une perspective unique sur les paysages agricoles.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🍦 Pause gourmande</p>
+                                <p class="text-gray-700">À Praia da Vitória, offrez-vous une glace artisanale en vous promenant le long de la promenade.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-12" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ciel rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2 font-bold">Jour 12</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Vol vers Pico, l'île montagne</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Quittez Terceira pour l'île de Pico, dominée par le majestueux volcan qui lui a donné son nom. Après un vol inter-îles, installez-vous à Madalena et commencez à vous familiariser avec cette île unique, terre de vignerons et d'anciens baleiniers, une transition vers des paysages plus bruts.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left font-medium">
+                            <li>✈️ <strong>Vol inter-îles</strong>: Prenez un vol de Lajes (TER) à Pico (PIX). Récupérez votre voiture de location et rejoignez Madalena, la principale ville de l'île.</li><li>🚶‍♀️ <strong>Découverte de Madalena</strong>: Promenez-vous dans Madalena, visitez son église et son port, et admirez la vue sur l'île voisine de Faial. Profitez de l'ambiance paisible de cette ville côtière.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/mytripplanner-dotfr/Azores-22515h7o9w6tgus/main/jour12.jpg" class="w-full h-64 object-cover" alt="Jour 12">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">⛰️ Mont Pico</p>
+                                <p class="text-gray-700">Le Mont Pico est le point culminant du Portugal. Sa silhouette est visible de presque partout sur l'île.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🍷 Vins de Pico</p>
+                                <p class="text-gray-700">Pico est célèbre pour ses vins, cultivés dans des vignobles uniques protégés par des murs de pierre volcanique.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-13" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-roche rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2 font-bold">Jour 13</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Ascension du Mont Pico ou exploration de ses pentes</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Aujourd'hui, relevez le défi de l'ascension du Mont Pico, le plus haut sommet du Portugal, pour une expérience inoubliable et des vues à 360 degrés. Si l'ascension est trop exigeante, explorez les sentiers à la base du volcan et les paysages lunaires qui l'entourent, une journée d'aventure au cœur de l'île.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left font-medium">
+                            <li>🧗‍♂️ <strong>Ascension du Mont Pico</strong>: Pour les plus sportifs, l'ascension du Mont Pico est une randonnée exigeante mais gratifiante, offrant des vues panoramiques incroyables depuis le sommet.</li><li>🚶‍♀️ <strong>Exploration des sentiers de base</strong>: Si l'ascension n'est pas une option, explorez les sentiers autour de la base du volcan, découvrez les paysages volcaniques et les grottes de lave, comme la Gruta das Torres.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/mytripplanner-dotfr/Azores-22515h7o9w6tgus/main/jour13.jpg" class="w-full h-64 object-cover" alt="Jour 13">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">⚠️ Préparation ascension</p>
+                                <p class="text-gray-700">L'ascension nécessite une bonne condition physique, de l'équipement adapté et un guide si vous n'êtes pas expérimenté. Enregistrez-vous au "Casa da Montanha".</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">👟 Chaussures de randonnée</p>
+                                <p class="text-gray-700">Des chaussures de randonnée robustes sont indispensables, que vous montiez au sommet ou exploriez les sentiers inférieurs.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-14" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ocre rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2 font-bold">Jour 14</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Vignobles et piscines naturelles</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Découvrez le paysage viticole unique de Pico, classé à l'UNESCO, où les vignes sont cultivées dans des parcelles protégées par des murs de pierre volcanique. L'après-midi, rafraîchissez-vous dans les piscines naturelles formées par la lave le long de la côte, une journée entre culture et détente.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left font-medium">
+                            <li>🍷 <strong>Paysage viticole de la Criação Velha</strong>: Explorez le paysage viticole de la Criação Velha, classé au patrimoine mondial de l'UNESCO, et visitez le Musée du Vin pour comprendre cette culture unique.</li><li>🏊‍♀️ <strong>Piscines naturelles de São Roque do Pico</strong>: Profitez des piscines naturelles de São Roque do Pico ou de Prainha, des bassins d'eau de mer protégés par la roche volcanique, parfaits pour la baignade.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/mytripplanner-dotfr/Azores-22515h7o9w6tgus/main/jour14.jpg" class="w-full h-64 object-cover" alt="Jour 14">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">UNESCO Patrimoine unique</p>
+                                <p class="text-gray-700">Le paysage viticole de Pico est un exemple remarquable d'adaptation humaine à un environnement difficile, créant un microclimat idéal pour la vigne.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">☀️ Protection solaire</p>
+                                <p class="text-gray-700">Le soleil peut être intense sur les roches volcaniques. N'oubliez pas votre crème solaire et un chapeau.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-15" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ciel rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2 font-bold">Jour 15</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Observation des cétacés à Pico</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Pico est l'un des meilleurs endroits au monde pour l'observation des baleines et des dauphins. Embarquez pour une nouvelle aventure marine et laissez-vous émerveiller par la diversité de la vie marine de l'Atlantique. L'après-midi, explorez les musées liés à l'histoire de la chasse à la baleine, pour une journée riche en émotions et en découvertes.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left font-medium">
+                            <li>🐳 <strong>Excursion d'observation des cétacés</strong>: Participez à une excursion au départ de Lajes do Pico, un ancien port baleinier, pour observer les différentes espèces de baleines et de dauphins qui fréquentent les eaux açoriennes.</li><li>🏛️ <strong>Musée des Baleiniers</strong>: Visitez le Musée des Baleiniers à Lajes do Pico pour comprendre l'histoire de la chasse à la baleine aux Açores et sa transition vers l'observation.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/mytripplanner-dotfr/Azores-22515h7o9w6tgus/main/jour15.jpg" class="w-full h-64 object-cover" alt="Jour 15">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🐬 Diversité marine</p>
+                                <p class="text-gray-700">Les eaux de Pico abritent une grande diversité de cétacés, y compris des cachalots, des rorquals et plusieurs espèces de dauphins.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🕰️ Histoire locale</p>
+                                <p class="text-gray-700">Le musée offre un aperçu poignant de la vie des baleiniers et de l'évolution de la relation de l'île avec l'océan.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-16" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-roche rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2 font-bold">Jour 16</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Ferry vers Faial et Horta</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Traversez le canal qui sépare Pico de Faial en ferry, une courte traversée offrant de belles vues sur les deux îles. Installez-vous à Horta, la capitale de Faial, célèbre pour son port de plaisance coloré et son ambiance cosmopolite, point de rencontre des navigateurs du monde entier, pour une nouvelle atmosphère.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left font-medium">
+                            <li>⛴️ <strong>Traversée en ferry</strong>: Prenez le ferry de Madalena (Pico) à Horta (Faial). La traversée est courte et offre de belles vues sur le Mont Pico et la Caldeira de Faial.</li><li>⚓ <strong>Découverte du port de Horta</strong>: Flânez le long de la marina de Horta, admirez les fresques laissées par les marins du monde entier et imprégnez-vous de l'ambiance unique de ce port mythique.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/mytripplanner-dotfr/Azores-22515h7o9w6tgus/main/jour16.jpg" class="w-full h-64 object-cover" alt="Jour 16">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">⛵ Peter Café Sport</p>
+                                <p class="text-gray-700">Ne manquez pas de prendre un verre au Peter Café Sport, une institution pour les marins et un lieu chargé d'histoire.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🗺️ Office de tourisme</p>
+                                <p class="text-gray-700">L'office de tourisme de Horta est une bonne ressource pour obtenir des informations sur l'île et les activités.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-17" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ocre rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2 font-bold">Jour 17</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Paysages lunaires de Capelinhos et Caldeira</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Explorez les paysages surréalistes du volcan de Capelinhos, né d'une éruption sous-marine récente, et visitez son centre d'interprétation. L'après-midi, découvrez la majestueuse Caldeira de Faial, un cratère volcanique impressionnant recouvert de végétation luxuriante, une journée entre géologie et nature.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left font-medium">
+                            <li>🌋 <strong>Volcan des Capelinhos</strong>: Visitez le site du volcan des Capelinhos, un paysage lunaire créé par l'éruption de 1957-58, et explorez le Centre d'Interprétation pour comprendre ce phénomène géologique.</li><li>🌳 <strong>La Caldeira de Faial</strong>: Montez jusqu'à la Caldeira de Faial, un immense cratère volcanique recouvert de végétation, offrant des vues spectaculaires et des sentiers de randonnée.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/mytripplanner-dotfr/Azores-22515h7o9w6tgus/main/jour17.jpg" class="w-full h-64 object-cover" alt="Jour 17">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🚶‍♂️ Randonnée Caldeira</p>
+                                <p class="text-gray-700">Un sentier de randonnée permet de faire le tour de la Caldeira (environ 2-3 heures). Prévoyez de l'eau et des chaussures adaptées.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🌬️ Vent et brouillard</p>
+                                <p class="text-gray-700">Le vent peut être fort et le brouillard fréquent à la Caldeira. Prévoyez des vêtements chauds et un coupe-vent.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-18" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ciel rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2 font-bold">Jour 18</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Horta et Monte da Guia</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Profitez de cette dernière journée complète sur Faial pour explorer davantage Horta, ses musées et ses points de vue. Montez au Monte da Guia pour une perspective différente sur la ville et la baie. Une journée pour savourer l'ambiance unique de cette île et ses panoramas avant le départ.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left font-medium">
+                            <li>🏛️ <strong>Musées de Horta</strong>: Visitez le Musée de Horta pour en apprendre davantage sur l'histoire de l'île ou le Musée d'Art Sacré.</li><li>⛰️ <strong>Monte da Guia</strong>: Montez au Monte da Guia, un ancien volcan éteint, pour des vues panoramiques sur la ville de Horta, la marina et l'île de Pico en arrière-plan.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/mytripplanner-dotfr/Azores-22515h7o9w6tgus/main/jour18.jpg" class="w-full h-64 object-cover" alt="Jour 18">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🎨 Artisanat local</p>
+                                <p class="text-gray-700">Recherchez l'artisanat local, notamment les objets en os de baleine sculptés, un héritage de l'époque baleinière (aujourd'hui en matériaux alternatifs).</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🍽️ Dîner d'adieu</p>
+                                <p class="text-gray-700">Profitez d'un dernier dîner à Horta pour savourer les fruits de mer frais et les spécialités locales.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-19" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-roche rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2 font-bold">Jour 19</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Départ des Açores</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">C'est le moment de dire au revoir aux magnifiques Açores. Selon l'horaire de votre vol international, vous prendrez un vol inter-îles de Faial vers São Miguel, puis votre vol retour vers David, Panama. Emportez avec vous des souvenirs inoubliables de ces îles volcaniques et de leurs paysages époustouflants.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left font-medium">
+                            <li>✈️ <strong>Vol inter-îles et international</strong>: Prenez votre vol de Faial (Horta) vers Ponta Delgada (São Miguel), puis votre vol international de Ponta Delgada (PDL) vers David, Panama.</li><li>🎁 <strong>Derniers achats ou café</strong>: Si le temps le permet, profitez des dernières heures pour quelques achats de dernière minute à l'aéroport ou un dernier café açorien.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/mytripplanner-dotfr/Azores-22515h7o9w6tgus/main/jour19.jpg" class="w-full h-64 object-cover" alt="Jour 19">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">⏰ Temps de transit</p>
+                                <p class="text-gray-700">Prévoyez suffisamment de temps entre les vols inter-îles et le vol international, car les retards peuvent arriver.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🧳 Bagages</p>
+                                <p class="text-gray-700">Vérifiez les franchises bagages pour les vols inter-îles, elles peuvent être plus restrictives que pour les vols internationaux.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+        </div>
+    </section>
+
+    <section id="pratique" class="bg-white border-t border-gray-200 pt-12 pb-12 scroll-mt-24">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-10">
+            <div>
+                <h4 class="font-serif text-xl mb-4 text-template-roche flex items-center gap-2 font-bold">
+                    <span>💴</span> Budget
+                </h4>
+                
+                    <p class="text-sm text-gray-600 leading-relaxed mb-2"><strong>Budget vol: </strong>1500€/pers (Vol David, Panama - Ponta Delgada A/R en classe économique, incluant les vols inter-îles)</p>
+                
+                    <p class="text-sm text-gray-600 leading-relaxed mb-2"><strong>Budget transports: </strong>1700€/pers (Location de voiture sur 4 îles pour 19 jours, essence, ferries inter-îles)</p>
+                
+                    <p class="text-sm text-gray-600 leading-relaxed mb-2"><strong>Budget repas: </strong>950€/pers (Repas de type moyen, incluant quelques spécialités locales et restaurants)</p>
+                
+                    <p class="text-sm text-gray-600 leading-relaxed mb-2"><strong>Budget logement: </strong>2000€/pers (Hébergement en hôtels 3 étoiles pour 19 nuits)</p>
+                
+                    <p class="text-sm text-gray-600 leading-relaxed mb-2"><strong>Budget activités: </strong>400€/pers (Excursions d'observation des cétacés, entrées sites géothermiques, musées)</p>
+                
+            </div>
+            <div>
+                <h4 class="font-serif text-xl mb-4 text-template-roche flex items-center gap-2 font-bold">
+                    <span>☀️</span> Périodes Idéales
+                </h4>
+                
+                    <p class="text-sm text-gray-600 leading-relaxed mb-2">Les périodes idéales pour ce séjour sont les mois de mai et septembre.</p>
+                
+            </div>
+            <div>
+                <h4 class="font-serif text-xl mb-4 text-template-roche flex items-center gap-2 font-bold">
+                    <span>📃</span> Infos pratiques
+                </h4>
+                
+                    <p class="text-sm text-gray-600 leading-relaxed mb-2">🇪🇺 Les Açores sont une région autonome du Portugal, membre de l'Union Européenne. La monnaie est l'Euro (€).</p>
+                
+                    <p class="text-sm text-gray-600 leading-relaxed mb-2">🗣️ La population açorienne est accueillante et fière de son patrimoine. Le portugais est la langue officielle, mais l'anglais est souvent compris dans les zones touristiques.</p>
+                
+                    <p class="text-sm text-gray-600 leading-relaxed mb-2">🐋 Insolite : Les Açores sont l'un des meilleurs endroits au monde pour observer les cachalots, qui résident dans leurs eaux toute l'année.</p>
+                
+                    <p class="text-sm text-gray-600 leading-relaxed mb-2">☕ Insolite : São Miguel abrite les seules plantations de thé d'Europe, offrant un paysage unique et une dégustation locale.</p>
+                
+            </div>            
+            <div>
+                <h4 class="font-serif text-xl mb-4 text-template-roche flex items-center gap-2 font-bold">
+                    <span>🔗</span> Liens Utiles
+                </h4>
+                <ul class="text-sm space-y-3">
+                  <li><a href="https://mytripplanner-dotfr.github.io/Azores-22515h7o9w6tgus/map.html" target="_blank" class="hover:text-template-ocre transition flex items-center gap-2"><strong>🗺️ Carte Interactive</strong></a></li>
+                    
+                        <li><a href="https://www.visitazores.com/fr" target="_blank" class="hover:text-template-ocre transition flex items-center gap-2"><strong>📘 Visit Azores</strong></a></li>
+                    
+                        <li><a href="https://www.azoresairlines.pt/fr" target="_blank" class="hover:text-template-ocre transition flex items-center gap-2"><strong>✈️ SATA Azores Airlines</strong></a></li>
+                    
+                        <li><a href="https://www.atlanticoline.pt/en/" target="_blank" class="hover:text-template-ocre transition flex items-center gap-2"><strong>⛴️ Atlanticoline</strong></a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-50 border-t border-slate-200 py-6">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <p class="font-serif text-lg text-template-roche mb-2 font-bold">
+                MyTrip<span class="text-template-ocre">Planner</span>
+            </p>
+
+                <div class="flex justify-center gap-4 text-[10px] md:text-xs text-slate-500 mb-4 font-semibold">
+                    <a href="#" class="hover:text-brand-primary transition hover:underline">Mentions Légales</a>
+                    <a href="#" class="hover:text-brand-primary transition hover:underline">CGU</a>
+                    <a href="#" class="hover:text-brand-primary transition hover:underline">Confidentialité</a>
+                </div>
+
+            <p class="text-[10px] text-gray-400 mb-2">
+                &copy; 2025 MyTripPlanner. Tous droits réservés.
+            </p>
+
+            <div class="flex justify-center">
+                <p class="text-[10px] text-gray-400 uppercase tracking-widest px-2 py-0.5 border border-gray-200 rounded-full inline-block">
+                    🤖 Contenu généré par IA
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Gestion Scroll & Menu
+        const navDesktop = document.getElementById('nav-desktop');
+        const navMobile = document.getElementById('nav-mobile');
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                navDesktop.classList.remove('-translate-y-full');
+                navMobile.classList.remove('-translate-y-full');
+            } else {
+                navDesktop.classList.add('-translate-y-full');
+                navMobile.classList.add('-translate-y-full');
+            }
+        });
+        
+        // Active Link Highlighter
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const activeId = entry.target.id;
+                    document.querySelectorAll('.mobile-link').forEach(link => {
+                        const linkHref = link.getAttribute('href').substring(1);
+                        if (linkHref === activeId) {
+                            link.classList.remove('bg-gray-100', 'text-gray-700');
+                            link.classList.add('bg-template-ocre', 'text-white', 'shadow-md');
+                            link.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+                        } else {
+                            link.classList.add('bg-gray-100', 'text-gray-700');
+                            link.classList.remove('bg-template-ocre', 'text-white', 'shadow-md');
+                        }
+                    });
+                }
+            });
+        }, { rootMargin: '-40% 0px -60% 0px' });
+
+        document.querySelectorAll('div[id^="jour-"], section#pratique').forEach(s => observer.observe(s));
+    </script>
+</body>
+</html>
