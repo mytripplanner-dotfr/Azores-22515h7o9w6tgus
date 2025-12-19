@@ -1,0 +1,538 @@
+{
+  "pays": "Portugal",
+  "drapeau": "🇵🇹",
+  "symbole": "🌊",
+  "titre": "Aventure Insulaire aux Açores : Trésors Volcaniques et Océaniques",
+  "budget_total": "6550€",
+  "duree": "19 jours",
+  "temps_vol": "environ 18h avec escales depuis David, Panama",
+  "jours": [
+    {
+      "jour": 1,
+      "symbole": "🛬",
+      "titre": "Arrivée à Ponta Delgada, São Miguel",
+      "legende": "Après un long voyage, atterrissez sur l'île principale de São Miguel. Prenez le temps de vous installer et de vous imprégner de l'atmosphère açorienne. Une balade tranquille dans la capitale vous permettra de découvrir ses charmes sans précipitation, une introduction douce à votre aventure insulaire.",
+      "lieu": "Ponta Delgada, São Miguel",
+      "activites": [
+        "🛬 <strong>Arrivée et installation</strong>: Atterrissez à l'aéroport de Ponta Delgada (PDL), récupérez votre voiture de location et rejoignez votre hôtel pour vous rafraîchir et déposer vos bagages.",
+        "🚶‍♂️ <strong>Balade dans le centre historique</strong>: Flânez dans les rues pavées de Ponta Delgada, admirez les portes de la ville et l'église de São Sebastião, et imprégnez-vous de l'ambiance locale en douceur."
+      ],
+      "illustration": "jour1.jpg",
+      "encarts": [
+        {
+          "symbole": "ℹ️",
+          "titre": "Location de voiture",
+          "texte": "La location d'une voiture est essentielle pour explorer les Açores en toute liberté. Réservez-la bien à l'avance, surtout en haute saison."
+        },
+        {
+          "symbole": "🍽️",
+          "titre": "Premier repas",
+          "texte": "Goûtez aux \"lapas grelhadas\" (patelles grillées) en entrée, une spécialité locale incontournable pour débuter votre aventure culinaire."
+        }
+      ]
+    },
+    {
+      "jour": 2,
+      "symbole": "🏞️",
+      "titre": "Les merveilles de Sete Cidades",
+      "legende": "Aujourd'hui, plongez au cœur de l'icône des Açores : la caldeira de Sete Cidades. Ses lacs jumeaux, l'un bleu et l'autre vert, offrent des panoramas à couper le souffle. Profitez des points de vue spectaculaires avant de descendre explorer le village niché au fond du cratère, une immersion totale dans la nature volcanique.",
+      "lieu": "Sete Cidades, São Miguel",
+      "activites": [
+        "👀 <strong>Points de vue emblématiques</strong>: Admirez la vue imprenable sur les lacs jumeaux depuis le Miradouro da Vista do Rei, puis explorez le Miradouro da Boca do Inferno pour une perspective encore plus spectaculaire et moins connue.",
+        "🚶‍♀️ <strong>Exploration du village de Sete Cidades</strong>: Descendez dans la caldeira pour visiter le charmant village, vous promener au bord des lacs et ressentir la quiétude de ce lieu unique."
+      ],
+      "illustration": "jour2.jpg",
+      "encarts": [
+        {
+          "symbole": "☁️",
+          "titre": "Météo changeante",
+          "texte": "Le temps aux Açores peut changer rapidement. Ne vous découragez pas si le brouillard est présent, il peut se dissiper en quelques minutes."
+        },
+        {
+          "symbole": "📸",
+          "titre": "Conseil photo",
+          "texte": "Le Miradouro da Boca do Inferno offre des clichés incroyables, mais l'accès peut être un peu plus difficile. La vue en vaut la peine."
+        }
+      ]
+    },
+    {
+      "jour": 3,
+      "symbole": "♨️",
+      "titre": "Les trésors géothermiques de Furnas",
+      "legende": "Direction l'est de l'île pour découvrir Furnas, une vallée volcanique active. Entre fumerolles, sources chaudes et jardins luxuriants, cette journée sera placée sous le signe de la détente et de la découverte des phénomènes géothermiques. Ne manquez pas de goûter au fameux \"cozido das Furnas\", une expérience culinaire unique.",
+      "lieu": "Furnas, São Miguel",
+      "activites": [
+        "♨️ <strong>Sources chaudes et fumerolles</strong>: Visitez les caldeiras de Furnas pour observer les fumerolles et les sources d'eau bouillante, témoins de l'activité volcanique souterraine. C'est ici que le \"cozido\" est cuit sous terre.",
+        "🌳 <strong>Jardin Terra Nostra</strong>: Détendez-vous dans le magnifique parc botanique de Terra Nostra et baignez-vous dans sa piscine thermale riche en fer, aux propriétés relaxantes et curatives."
+      ],
+      "illustration": "jour3.jpg",
+      "encarts": [
+        {
+          "symbole": "🍽️",
+          "titre": "Le Cozido",
+          "texte": "Réservez votre \"cozido das Furnas\" à l'avance dans un restaurant local pour être sûr d'en déguster un, car sa préparation prend plusieurs heures."
+        },
+        {
+          "symbole": "⚠️",
+          "titre": "Attention aux maillots",
+          "texte": "L'eau riche en fer des piscines thermales peut tacher les maillots de bain clairs. Prévoyez un maillot foncé ou un vieux maillot."
+        }
+      ]
+    },
+    {
+      "jour": 4,
+      "symbole": "⛰️",
+      "titre": "Lagoa do Fogo et Caldeira Velha",
+      "legende": "Aujourd'hui, explorez le cœur sauvage de São Miguel avec la Lagoa do Fogo, un lac d'une beauté brute niché dans un cratère. L'après-midi sera dédiée à la relaxation dans les eaux chaudes de Caldeira Velha, une oasis de verdure et de cascades thermales, combinant nature sauvage et bien-être.",
+      "lieu": "Lagoa do Fogo, Caldeira Velha, São Miguel",
+      "activites": [
+        "🏞️ <strong>Miradouros de Lagoa do Fogo</strong>: Admirez la vue panoramique sur la Lagoa do Fogo depuis les différents points d'observation, un lac d'une pureté exceptionnelle au milieu d'une nature préservée.",
+        "💦 <strong>Baignade à Caldeira Velha</strong>: Plongez dans les piscines naturelles d'eau chaude de Caldeira Velha, entourées d'une végétation luxuriante et d'une cascade d'eau ferrugineuse."
+      ],
+      "illustration": "jour4.jpg",
+      "encarts": [
+        {
+          "symbole": "🚶‍♂️",
+          "titre": "Randonnée",
+          "texte": "Des sentiers de randonnée mènent jusqu'aux rives de la Lagoa do Fogo pour les plus aventureux. Prévoyez de bonnes chaussures."
+        },
+        {
+          "symbole": "🎟️",
+          "titre": "Accès Caldeira Velha",
+          "texte": "L'accès à Caldeira Velha est payant et limité. Il est conseillé d'arriver tôt ou de réserver en ligne si possible pour éviter l'attente."
+        }
+      ]
+    },
+    {
+      "jour": 5,
+      "symbole": "🌿",
+      "titre": "Côte Nord-Est et Ribeira Grande",
+      "legende": "Partez à la découverte de la côte nord-est de São Miguel, réputée pour ses paysages verdoyants et ses falaises abruptes. Visitez des villages pittoresques et profitez de la beauté sauvage de cette partie de l'île. Terminez la journée à Ribeira Grande, ville de surf et d'architecture baroque, pour un contraste saisissant.",
+      "lieu": "Nordeste, Ribeira Grande, São Miguel",
+      "activites": [
+        "🌸 <strong>Parcs et Miradouros du Nordeste</strong>: Explorez les magnifiques parcs fleuris et les points de vue aménagés le long de la route côtière du Nordeste, comme le Miradouro da Ponta do Sossego ou le Miradouro da Ponta da Madrugada.",
+        "🏄‍♂️ <strong>Ribeira Grande et ses plages</strong>: Visitez la charmante ville de Ribeira Grande, admirez son architecture baroque et profitez de l'ambiance décontractée de ses plages, prisées des surfeurs."
+      ],
+      "illustration": "jour5.jpg",
+      "encarts": [
+        {
+          "symbole": "🛣️",
+          "titre": "Routes panoramiques",
+          "texte": "La route côtière du Nordeste est sinueuse mais offre des vues spectaculaires. Prenez votre temps pour apprécier chaque virage."
+        },
+        {
+          "symbole": "⛪",
+          "titre": "Architecture",
+          "texte": "À Ribeira Grande, ne manquez pas l'église de Nossa Senhora da Estrela, un bel exemple de l'architecture açorienne."
+        }
+      ]
+    },
+    {
+      "jour": 6,
+      "symbole": "🐋",
+      "titre": "Rencontre avec les géants de l'océan",
+      "legende": "Aujourd'hui est une journée dédiée à l'océan Atlantique et à ses habitants majestueux. Embarquez pour une excursion d'observation des baleines et des dauphins, une expérience inoubliable au large des côtes de São Miguel. L'après-midi, profitez de la capitale pour une dernière immersion avant de changer d'île.",
+      "lieu": "Ponta Delgada, São Miguel",
+      "activites": [
+        "🐳 <strong>Observation des cétacés</strong>: Participez à une excursion en bateau pour observer les baleines et les dauphins dans leur habitat naturel, une expérience magique et respectueuse de la faune marine.",
+        "🚶‍♀️ <strong>Détente à Ponta Delgada</strong>: Profitez de l'après-midi pour flâner dans les boutiques, visiter le marché de la Graça ou simplement vous détendre sur une terrasse de café à Ponta Delgada."
+      ],
+      "illustration": "jour6.jpg",
+      "encarts": [
+        {
+          "symbole": "🌊",
+          "titre": "Choix de l'opérateur",
+          "texte": "Choisissez un opérateur respectueux de l'environnement et des animaux pour votre excursion d'observation des cétacés."
+        },
+        {
+          "symbole": "🤢",
+          "titre": "Mal de mer",
+          "texte": "Si vous êtes sujet au mal de mer, prévoyez des médicaments avant l'excursion, car l'océan Atlantique peut être agité."
+        }
+      ]
+    },
+    {
+      "jour": 7,
+      "symbole": "☕",
+      "titre": "Plantations de thé et ananas",
+      "legende": "Avant de quitter São Miguel, découvrez deux productions agricoles uniques aux Açores : le thé et l'ananas. Visitez les plantations et dégustez ces produits locaux, témoins du savoir-faire insulaire. Profitez de cette dernière journée sur l'île pour quelques achats souvenirs ou une dernière balade.",
+      "lieu": "São Miguel",
+      "activites": [
+        "☕ <strong>Visite des plantations de thé</strong>: Explorez les plantations de thé de Gorreana ou Porto Formoso, les seules d'Europe, et dégustez une tasse de thé açorien tout en admirant les paysages verdoyants.",
+        "🍍 <strong>Serres d'ananas</strong>: Découvrez la culture de l'ananas des Açores dans des serres traditionnelles, un fruit cultivé avec patience et savoir-faire, et goûtez à sa saveur unique."
+      ],
+      "illustration": "jour7.jpg",
+      "encarts": [
+        {
+          "symbole": "🎁",
+          "titre": "Souvenirs gourmands",
+          "texte": "Le thé et les produits à base d'ananas (liqueur, confiture) sont d'excellents souvenirs à rapporter de São Miguel."
+        },
+        {
+          "symbole": "🚶‍♀️",
+          "titre": "Balade digestive",
+          "texte": "Après les dégustations, profitez d'une dernière balade le long de la côte ou dans un parc pour digérer et profiter des paysages."
+        }
+      ]
+    },
+    {
+      "jour": 8,
+      "symbole": "✈️",
+      "titre": "Vol vers Terceira et Angra do Heroísmo",
+      "legende": "Aujourd'hui, quittez São Miguel pour l'île de Terceira, réputée pour sa capitale historique classée à l'UNESCO. Après un court vol inter-îles, installez-vous à Angra do Heroísmo et commencez à explorer ses rues colorées et son riche patrimoine, une immersion dans l'histoire açorienne.",
+      "lieu": "Angra do Heroísmo, Terceira",
+      "activites": [
+        "✈️ <strong>Vol inter-îles</strong>: Prenez un vol court de Ponta Delgada (PDL) à Lajes (TER) sur Terceira. Récupérez une nouvelle voiture de location à l'aéroport.",
+        "🚶‍♂️ <strong>Découverte d'Angra do Heroísmo</strong>: Flânez dans le centre historique d'Angra do Heroísmo, admirez ses maisons colorées, ses églises baroques et ses balcons typiques, témoins de son passé glorieux."
+      ],
+      "illustration": "jour8.jpg",
+      "encarts": [
+        {
+          "symbole": "UNESCO",
+          "titre": "Patrimoine Mondial",
+          "texte": "Angra do Heroísmo est classée au patrimoine mondial de l'UNESCO. Prenez le temps d'apprécier son architecture unique."
+        },
+        {
+          "symbole": "🗺️",
+          "titre": "Orientation",
+          "texte": "Procurez-vous une carte de la ville pour ne rien manquer des points d'intérêt principaux."
+        }
+      ]
+    },
+    {
+      "jour": 9,
+      "symbole": "🏰",
+      "titre": "Exploration d'Angra et Monte Brasil",
+      "legende": "Consacrez cette journée à l'exploration approfondie d'Angra do Heroísmo. Visitez ses monuments historiques, ses musées et terminez par une ascension du Monte Brasil pour une vue panoramique sur la ville et la baie. Une immersion complète dans l'histoire et la beauté de Terceira, entre culture et nature.",
+      "lieu": "Angra do Heroísmo, Terceira",
+      "activites": [
+        "⛪ <strong>Visite des monuments d'Angra</strong>: Explorez la Cathédrale de Sé, le Palais des Capitaines Généraux et le Musée d'Angra pour un aperçu de l'histoire et de la culture de l'île.",
+        "⛰️ <strong>Ascension du Monte Brasil</strong>: Montez au sommet du Monte Brasil, un volcan éteint formant une péninsule, pour profiter de vues spectaculaires sur Angra do Heroísmo et l'océan Atlantique."
+      ],
+      "illustration": "jour9.jpg",
+      "encarts": [
+        {
+          "symbole": "🚶‍♀️",
+          "titre": "Chaussures confortables",
+          "texte": "Prévoyez des chaussures confortables pour la marche dans les rues pavées et l'ascension du Monte Brasil."
+        },
+        {
+          "symbole": "🌅",
+          "titre": "Coucher de soleil",
+          "texte": "Le Monte Brasil est un excellent spot pour admirer le coucher de soleil sur Angra do Heroísmo."
+        }
+      ]
+    },
+    {
+      "jour": 10,
+      "symbole": "🌋",
+      "titre": "Grottes volcaniques et piscines naturelles",
+      "legende": "Aventurez-vous dans les entrailles de la terre en explorant les grottes volcaniques de Terceira, témoins de son passé géologique. L'après-midi, détendez-vous dans les piscines naturelles de Biscoitos, formées par la lave, offrant un cadre unique pour la baignade et la relaxation.",
+      "lieu": "Algar do Carvão, Gruta do Natal, Biscoitos, Terceira",
+      "activites": [
+        " subterranean <strong>Algar do Carvão et Gruta do Natal</strong>: Descendez dans l'Algar do Carvão, une cheminée volcanique impressionnante, puis explorez la Gruta do Natal, un tunnel de lave fascinant.",
+        "🏊‍♀️ <strong>Piscines naturelles de Biscoitos</strong>: Baignez-vous dans les piscines naturelles de Biscoitos, creusées dans la roche volcanique noire, offrant une expérience de baignade unique et rafraîchissante."
+      ],
+      "illustration": "jour10.jpg",
+      "encarts": [
+        {
+          "symbole": "🌡️",
+          "titre": "Température des grottes",
+          "texte": "La température dans les grottes est fraîche et humide. Prévoyez un pull léger même en été."
+        },
+        {
+          "symbole": "🍷",
+          "titre": "Vins de Biscoitos",
+          "texte": "Profitez de votre passage à Biscoitos pour visiter le Musée du Vin et déguster les vins locaux, produits sur des terres volcaniques."
+        }
+      ]
+    },
+    {
+      "jour": 11,
+      "symbole": "🐄",
+      "titre": "Paysages ruraux et Praia da Vitória",
+      "legende": "Découvrez l'intérieur verdoyant de Terceira, ses pâturages et ses vues panoramiques depuis la Serra do Cume. L'après-midi, explorez Praia da Vitória, la deuxième ville de l'île, avec sa longue plage de sable et son port animé. Une journée entre nature et urbanité, pour un aperçu complet de l'île.",
+      "lieu": "Serra do Cume, Praia da Vitória, Terceira",
+      "activites": [
+        " panoramic <strong>Miradouro da Serra do Cume</strong>: Admirez la vue emblématique sur la \"patchwork\" de champs verts depuis la Serra do Cume, un panorama unique sur l'intérieur de l'île.",
+        "🏖️ <strong>Praia da Vitória</strong>: Visitez Praia da Vitória, sa marina, sa longue plage de sable et son centre-ville animé. Profitez-en pour vous détendre ou prendre un café en bord de mer."
+      ],
+      "illustration": "jour11.jpg",
+      "encarts": [
+        {
+          "symbole": "📸",
+          "titre": "Photo iconique",
+          "texte": "Le Miradouro da Serra do Cume est l'un des spots photo les plus célèbres de Terceira, offrant une perspective unique sur les paysages agricoles."
+        },
+        {
+          "symbole": "🍦",
+          "titre": "Pause gourmande",
+          "texte": "À Praia da Vitória, offrez-vous une glace artisanale en vous promenant le long de la promenade."
+        }
+      ]
+    },
+    {
+      "jour": 12,
+      "symbole": "✈️",
+      "titre": "Vol vers Pico, l'île montagne",
+      "legende": "Quittez Terceira pour l'île de Pico, dominée par le majestueux volcan qui lui a donné son nom. Après un vol inter-îles, installez-vous à Madalena et commencez à vous familiariser avec cette île unique, terre de vignerons et d'anciens baleiniers, une transition vers des paysages plus bruts.",
+      "lieu": "Madalena, Pico",
+      "activites": [
+        "✈️ <strong>Vol inter-îles</strong>: Prenez un vol de Lajes (TER) à Pico (PIX). Récupérez votre voiture de location et rejoignez Madalena, la principale ville de l'île.",
+        "🚶‍♀️ <strong>Découverte de Madalena</strong>: Promenez-vous dans Madalena, visitez son église et son port, et admirez la vue sur l'île voisine de Faial. Profitez de l'ambiance paisible de cette ville côtière."
+      ],
+      "illustration": "jour12.jpg",
+      "encarts": [
+        {
+          "symbole": "⛰️",
+          "titre": "Mont Pico",
+          "texte": "Le Mont Pico est le point culminant du Portugal. Sa silhouette est visible de presque partout sur l'île."
+        },
+        {
+          "symbole": "🍷",
+          "titre": "Vins de Pico",
+          "texte": "Pico est célèbre pour ses vins, cultivés dans des vignobles uniques protégés par des murs de pierre volcanique."
+        }
+      ]
+    },
+    {
+      "jour": 13,
+      "symbole": "🌋",
+      "titre": "Ascension du Mont Pico ou exploration de ses pentes",
+      "legende": "Aujourd'hui, relevez le défi de l'ascension du Mont Pico, le plus haut sommet du Portugal, pour une expérience inoubliable et des vues à 360 degrés. Si l'ascension est trop exigeante, explorez les sentiers à la base du volcan et les paysages lunaires qui l'entourent, une journée d'aventure au cœur de l'île.",
+      "lieu": "Mont Pico, Pico",
+      "activites": [
+        "🧗‍♂️ <strong>Ascension du Mont Pico</strong>: Pour les plus sportifs, l'ascension du Mont Pico est une randonnée exigeante mais gratifiante, offrant des vues panoramiques incroyables depuis le sommet.",
+        "🚶‍♀️ <strong>Exploration des sentiers de base</strong>: Si l'ascension n'est pas une option, explorez les sentiers autour de la base du volcan, découvrez les paysages volcaniques et les grottes de lave, comme la Gruta das Torres."
+      ],
+      "illustration": "jour13.jpg",
+      "encarts": [
+        {
+          "symbole": "⚠️",
+          "titre": "Préparation ascension",
+          "texte": "L'ascension nécessite une bonne condition physique, de l'équipement adapté et un guide si vous n'êtes pas expérimenté. Enregistrez-vous au \"Casa da Montanha\"."
+        },
+        {
+          "symbole": "👟",
+          "titre": "Chaussures de randonnée",
+          "texte": "Des chaussures de randonnée robustes sont indispensables, que vous montiez au sommet ou exploriez les sentiers inférieurs."
+        }
+      ]
+    },
+    {
+      "jour": 14,
+      "symbole": "🍇",
+      "titre": "Vignobles et piscines naturelles",
+      "legende": "Découvrez le paysage viticole unique de Pico, classé à l'UNESCO, où les vignes sont cultivées dans des parcelles protégées par des murs de pierre volcanique. L'après-midi, rafraîchissez-vous dans les piscines naturelles formées par la lave le long de la côte, une journée entre culture et détente.",
+      "lieu": "Pico",
+      "activites": [
+        "🍷 <strong>Paysage viticole de la Criação Velha</strong>: Explorez le paysage viticole de la Criação Velha, classé au patrimoine mondial de l'UNESCO, et visitez le Musée du Vin pour comprendre cette culture unique.",
+        "🏊‍♀️ <strong>Piscines naturelles de São Roque do Pico</strong>: Profitez des piscines naturelles de São Roque do Pico ou de Prainha, des bassins d'eau de mer protégés par la roche volcanique, parfaits pour la baignade."
+      ],
+      "illustration": "jour14.jpg",
+      "encarts": [
+        {
+          "symbole": "UNESCO",
+          "titre": "Patrimoine unique",
+          "texte": "Le paysage viticole de Pico est un exemple remarquable d'adaptation humaine à un environnement difficile, créant un microclimat idéal pour la vigne."
+        },
+        {
+          "symbole": "☀️",
+          "titre": "Protection solaire",
+          "texte": "Le soleil peut être intense sur les roches volcaniques. N'oubliez pas votre crème solaire et un chapeau."
+        }
+      ]
+    },
+    {
+      "jour": 15,
+      "symbole": "🐋",
+      "titre": "Observation des cétacés à Pico",
+      "legende": "Pico est l'un des meilleurs endroits au monde pour l'observation des baleines et des dauphins. Embarquez pour une nouvelle aventure marine et laissez-vous émerveiller par la diversité de la vie marine de l'Atlantique. L'après-midi, explorez les musées liés à l'histoire de la chasse à la baleine, pour une journée riche en émotions et en découvertes.",
+      "lieu": "Lajes do Pico, Pico",
+      "activites": [
+        "🐳 <strong>Excursion d'observation des cétacés</strong>: Participez à une excursion au départ de Lajes do Pico, un ancien port baleinier, pour observer les différentes espèces de baleines et de dauphins qui fréquentent les eaux açoriennes.",
+        "🏛️ <strong>Musée des Baleiniers</strong>: Visitez le Musée des Baleiniers à Lajes do Pico pour comprendre l'histoire de la chasse à la baleine aux Açores et sa transition vers l'observation."
+      ],
+      "illustration": "jour15.jpg",
+      "encarts": [
+        {
+          "symbole": "🐬",
+          "titre": "Diversité marine",
+          "texte": "Les eaux de Pico abritent une grande diversité de cétacés, y compris des cachalots, des rorquals et plusieurs espèces de dauphins."
+        },
+        {
+          "symbole": "🕰️",
+          "titre": "Histoire locale",
+          "texte": "Le musée offre un aperçu poignant de la vie des baleiniers et de l'évolution de la relation de l'île avec l'océan."
+        }
+      ]
+    },
+    {
+      "jour": 16,
+      "symbole": "⛴️",
+      "titre": "Ferry vers Faial et Horta",
+      "legende": "Traversez le canal qui sépare Pico de Faial en ferry, une courte traversée offrant de belles vues sur les deux îles. Installez-vous à Horta, la capitale de Faial, célèbre pour son port de plaisance coloré et son ambiance cosmopolite, point de rencontre des navigateurs du monde entier, pour une nouvelle atmosphère.",
+      "lieu": "Horta, Faial",
+      "activites": [
+        "⛴️ <strong>Traversée en ferry</strong>: Prenez le ferry de Madalena (Pico) à Horta (Faial). La traversée est courte et offre de belles vues sur le Mont Pico et la Caldeira de Faial.",
+        "⚓ <strong>Découverte du port de Horta</strong>: Flânez le long de la marina de Horta, admirez les fresques laissées par les marins du monde entier et imprégnez-vous de l'ambiance unique de ce port mythique."
+      ],
+      "illustration": "jour16.jpg",
+      "encarts": [
+        {
+          "symbole": "⛵",
+          "titre": "Peter Café Sport",
+          "texte": "Ne manquez pas de prendre un verre au Peter Café Sport, une institution pour les marins et un lieu chargé d'histoire."
+        },
+        {
+          "symbole": "🗺️",
+          "titre": "Office de tourisme",
+          "texte": "L'office de tourisme de Horta est une bonne ressource pour obtenir des informations sur l'île et les activités."
+        }
+      ]
+    },
+    {
+      "jour": 17,
+      "symbole": "🌋",
+      "titre": "Paysages lunaires de Capelinhos et Caldeira",
+      "legende": "Explorez les paysages surréalistes du volcan de Capelinhos, né d'une éruption sous-marine récente, et visitez son centre d'interprétation. L'après-midi, découvrez la majestueuse Caldeira de Faial, un cratère volcanique impressionnant recouvert de végétation luxuriante, une journée entre géologie et nature.",
+      "lieu": "Capelinhos, Caldeira, Faial",
+      "activites": [
+        "🌋 <strong>Volcan des Capelinhos</strong>: Visitez le site du volcan des Capelinhos, un paysage lunaire créé par l'éruption de 1957-58, et explorez le Centre d'Interprétation pour comprendre ce phénomène géologique.",
+        "🌳 <strong>La Caldeira de Faial</strong>: Montez jusqu'à la Caldeira de Faial, un immense cratère volcanique recouvert de végétation, offrant des vues spectaculaires et des sentiers de randonnée."
+      ],
+      "illustration": "jour17.jpg",
+      "encarts": [
+        {
+          "symbole": "🚶‍♂️",
+          "titre": "Randonnée Caldeira",
+          "texte": "Un sentier de randonnée permet de faire le tour de la Caldeira (environ 2-3 heures). Prévoyez de l'eau et des chaussures adaptées."
+        },
+        {
+          "symbole": "🌬️",
+          "titre": "Vent et brouillard",
+          "texte": "Le vent peut être fort et le brouillard fréquent à la Caldeira. Prévoyez des vêtements chauds et un coupe-vent."
+        }
+      ]
+    },
+    {
+      "jour": 18,
+      "symbole": "🏙️",
+      "titre": "Horta et Monte da Guia",
+      "legende": "Profitez de cette dernière journée complète sur Faial pour explorer davantage Horta, ses musées et ses points de vue. Montez au Monte da Guia pour une perspective différente sur la ville et la baie. Une journée pour savourer l'ambiance unique de cette île et ses panoramas avant le départ.",
+      "lieu": "Horta, Faial",
+      "activites": [
+        "🏛️ <strong>Musées de Horta</strong>: Visitez le Musée de Horta pour en apprendre davantage sur l'histoire de l'île ou le Musée d'Art Sacré.",
+        "⛰️ <strong>Monte da Guia</strong>: Montez au Monte da Guia, un ancien volcan éteint, pour des vues panoramiques sur la ville de Horta, la marina et l'île de Pico en arrière-plan."
+      ],
+      "illustration": "jour18.jpg",
+      "encarts": [
+        {
+          "symbole": "🎨",
+          "titre": "Artisanat local",
+          "texte": "Recherchez l'artisanat local, notamment les objets en os de baleine sculptés, un héritage de l'époque baleinière (aujourd'hui en matériaux alternatifs)."
+        },
+        {
+          "symbole": "🍽️",
+          "titre": "Dîner d'adieu",
+          "texte": "Profitez d'un dernier dîner à Horta pour savourer les fruits de mer frais et les spécialités locales."
+        }
+      ]
+    },
+    {
+      "jour": 19,
+      "symbole": "🛫",
+      "titre": "Départ des Açores",
+      "legende": "C'est le moment de dire au revoir aux magnifiques Açores. Selon l'horaire de votre vol international, vous prendrez un vol inter-îles de Faial vers São Miguel, puis votre vol retour vers David, Panama. Emportez avec vous des souvenirs inoubliables de ces îles volcaniques et de leurs paysages époustouflants.",
+      "lieu": "Faial / São Miguel",
+      "activites": [
+        "✈️ <strong>Vol inter-îles et international</strong>: Prenez votre vol de Faial (Horta) vers Ponta Delgada (São Miguel), puis votre vol international de Ponta Delgada (PDL) vers David, Panama.",
+        "🎁 <strong>Derniers achats ou café</strong>: Si le temps le permet, profitez des dernières heures pour quelques achats de dernière minute à l'aéroport ou un dernier café açorien."
+      ],
+      "illustration": "jour19.jpg",
+      "encarts": [
+        {
+          "symbole": "⏰",
+          "titre": "Temps de transit",
+          "texte": "Prévoyez suffisamment de temps entre les vols inter-îles et le vol international, car les retards peuvent arriver."
+        },
+        {
+          "symbole": "🧳",
+          "titre": "Bagages",
+          "texte": "Vérifiez les franchises bagages pour les vols inter-îles, elles peuvent être plus restrictives que pour les vols internationaux."
+        }
+      ]
+    }
+  ],
+  "detail_budget": [
+    {
+      "titre": "Budget vol:",
+      "legende": "1500€/pers (Vol David, Panama - Ponta Delgada A/R en classe économique, incluant les vols inter-îles)",
+      "symbole": "🛬"
+    },
+    {
+      "titre": "Budget transports:",
+      "legende": "1700€/pers (Location de voiture sur 4 îles pour 19 jours, essence, ferries inter-îles)",
+      "symbole": "🚆"
+    },
+    {
+      "titre": "Budget repas:",
+      "legende": "950€/pers (Repas de type moyen, incluant quelques spécialités locales et restaurants)",
+      "symbole": "🥗"
+    },
+    {
+      "titre": "Budget logement:",
+      "legende": "2000€/pers (Hébergement en hôtels 3 étoiles pour 19 nuits)",
+      "symbole": "🛏️"
+    },
+    {
+      "titre": "Budget activités:",
+      "legende": "400€/pers (Excursions d'observation des cétacés, entrées sites géothermiques, musées)",
+      "symbole": "🎭"
+    }
+  ],
+  "periodes_ideales": [
+    {
+      "titre": "Les périodes idéales pour ce séjour sont les mois de mai et septembre.",
+      "symbole": "🌸"
+    }
+  ],
+  "infos_pratiques": [
+    {
+      "titre": "Les Açores sont une région autonome du Portugal, membre de l'Union Européenne. La monnaie est l'Euro (€).",
+      "symbole": "🇪🇺"
+    },
+    {
+      "titre": "La population açorienne est accueillante et fière de son patrimoine. Le portugais est la langue officielle, mais l'anglais est souvent compris dans les zones touristiques.",
+      "symbole": "🗣️"
+    },
+    {
+      "titre": "Insolite : Les Açores sont l'un des meilleurs endroits au monde pour observer les cachalots, qui résident dans leurs eaux toute l'année.",
+      "symbole": "🐋"
+    },
+    {
+      "titre": "Insolite : São Miguel abrite les seules plantations de thé d'Europe, offrant un paysage unique et une dégustation locale.",
+      "symbole": "☕"
+    }
+  ],
+  "liens_utiles": [
+    {
+      "legende": "Informations officielles sur le tourisme aux Açores",
+      "titre": "Visit Azores",
+      "url": "https://www.visitazores.com/fr",
+      "symbole": "📘"
+    },
+    {
+      "legende": "Compagnie aérienne inter-îles",
+      "titre": "SATA Azores Airlines",
+      "url": "https://www.azoresairlines.pt/fr",
+      "symbole": "✈️"
+    },
+    {
+      "legende": "Compagnie de ferries inter-îles",
+      "titre": "Atlanticoline",
+      "url": "https://www.atlanticoline.pt/en/",
+      "symbole": "⛴️"
+    }
+  ]
+}
